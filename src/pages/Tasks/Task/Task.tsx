@@ -1,5 +1,6 @@
 import { DriveFileRenameOutline } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AppCard from '../../../components/AppCard/AppCard';
 import AppTypography from '../../../components/AppTypography/AppTypography';
@@ -39,4 +40,4 @@ const Task = ({ title, description, id, status }: Props) => {
   );
 };
 
-export default Task;
+export default memo(Task);
