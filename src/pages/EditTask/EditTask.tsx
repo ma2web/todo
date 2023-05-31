@@ -100,27 +100,58 @@ const EditTask = (props: Props) => {
               >
                 <MenuItem
                   value='Todo'
-                  disabled={currentTask?.status === 'inProgress'}
+                  disabled={
+                    currentTask?.status === 'inProgress' ||
+                    currentTask?.status === 'Done'
+                  }
                 >
                   Todo
                 </MenuItem>
                 <MenuItem
                   value='inProgress'
-                  disabled={currentTask?.status === 'inQA'}
+                  disabled={
+                    currentTask?.status === 'inQA' ||
+                    currentTask?.status === 'Blocked' ||
+                    currentTask?.status === 'Done'
+                  }
                 >
                   inProgress
                 </MenuItem>
                 <MenuItem
+                  value='Blocked'
+                  disabled={
+                    currentTask?.status === 'Todo' ||
+                    currentTask?.status === 'inQA' ||
+                    currentTask?.status === 'Done'
+                  }
+                >
+                  Blocked
+                </MenuItem>
+                <MenuItem
                   value='inQA'
-                  disabled={currentTask?.status === 'Todo'}
+                  disabled={
+                    currentTask?.status === 'Todo' ||
+                    currentTask?.status === 'Blocked' ||
+                    currentTask?.status === 'Done'
+                  }
                 >
                   inQA
                 </MenuItem>
                 <MenuItem
                   value='Done'
-                  disabled={currentTask?.status === 'Todo'}
+                  disabled={
+                    currentTask?.status === 'Todo' ||
+                    currentTask?.status === 'Blocked' ||
+                    currentTask?.status === 'inProgress'
+                  }
                 >
                   Done
+                </MenuItem>
+                <MenuItem
+                  value='Deployed'
+                  disabled={currentTask?.status !== 'Done'}
+                >
+                  Deployed
                 </MenuItem>
               </Select>
               {!!errors.status && (
