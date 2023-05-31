@@ -26,7 +26,14 @@ const Tasks: React.FC<Props> = (props) => {
             <Grid container spacing={3}>
               {state.todoList.map(
                 ({ title, description, status, id }: Todo) => (
-                  <Grid item xs={6} key={`${status}-${id}`}>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    md={4}
+                    lg={3}
+                    key={`${status}-${id}`}
+                  >
                     <Task
                       title={title}
                       description={description}
