@@ -2,6 +2,7 @@ import { ArrowRight } from '@mui/icons-material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import { useNavigate } from 'react-router-dom';
 import AppTypography from '../AppTypography/AppTypography';
 import { useStyles } from './AppNavbar.styles';
 
@@ -10,6 +11,7 @@ interface Props {
 }
 const AppNavbar = ({ currentPage }: Props) => {
   const { classes } = useStyles();
+  const navigate = useNavigate();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -19,7 +21,8 @@ const AppNavbar = ({ currentPage }: Props) => {
             color='inherit'
             className={classes.header}
           >
-            Task Management <ArrowRight /> {currentPage}
+            <span onClick={() => navigate('/')}>Task Management</span>{' '}
+            <ArrowRight /> {currentPage}
           </AppTypography>
         </Toolbar>
       </AppBar>

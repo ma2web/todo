@@ -5,5 +5,8 @@ export const useStyles = makeStyles()(({ spacing, shadows }) => ({
     display: 'flex',
     alignItems: 'center',
     gap: spacing(1),
+    '& span': {
+      cursor: 'pointer',
+    },
   },
 }));
