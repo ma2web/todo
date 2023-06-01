@@ -10,7 +10,7 @@ export const useStyles = makeStyles<{ padding?: number | string }>()(
       },
     },
     content: {
-      padding,
+      padding: padding ?? 32,
     },
     appCardHeader: {
       marginBottom: spacing(2),

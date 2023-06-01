@@ -1,5 +1,6 @@
 import React, { createContext, useReducer } from 'react';
-import { AppAction, AppState, reducer } from './reducers';
+import { AppState } from '../types/types';
+import { AppAction, reducer } from './reducers';
 
 interface StoreContextProps {
   state: AppState;

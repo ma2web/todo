@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import MainLayout from '../../Layout/MainLayout';
 import AppTypography from '../../components/AppTypography/AppTypography';
 import { Store } from '../../store/Store';
-import { Todo } from '../../store/reducers';
+import { Todo } from '../../types/types';
 import AddNewTask from './AddNewTask/AddNewTask';
 import Task from './Task/Task';
 import { useStyles } from './Tasks.styles';

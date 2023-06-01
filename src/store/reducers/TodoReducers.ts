@@ -1,33 +1,10 @@
-export interface Todo {
-  id: number;
-  title: string;
-  description: string;
-  status: string;
-}
-
-export interface AppState {
-  todoList: Todo[];
-}
-
-interface AddTodoAction {
-  type: 'ADD_TODO';
-  title: string;
-  description: string;
-  status: string;
-}
-
-interface RemoveTodoAction {
-  type: 'REMOVE_TODO';
-  id: number;
-}
-
-interface EditTodoStatusAction {
-  type: 'EDIT_TODO';
-  id: number;
-  status: string;
-  title: string;
-  description: string;
-}
+import {
+  AddTodoAction,
+  AppState,
+  EditTodoStatusAction,
+  RemoveTodoAction,
+  Todo,
+} from '../../types/types';
 
 export type AppAction = AddTodoAction | RemoveTodoAction | EditTodoStatusAction;
 

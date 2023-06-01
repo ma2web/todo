@@ -9,6 +9,7 @@ import AppButton from '../../components/AppButton/AppButton';
 import AppTypography from '../../components/AppTypography/AppTypography';
 import { Store } from '../../store/Store';
 import { editTodo } from '../../store/actions';
+import { Todo } from '../../types/types';
 import { useStyles } from './EditTask.styles';
 
 type Props = {};
@@ -35,7 +36,7 @@ const EditTask = (props: Props) => {
     return null;
   }
 
-  const currentTask = state.todoList.find((todo) => todo.id === parsedId);
+  const currentTask = state.todoList.find((todo: Todo) => todo.id === parsedId);
 
   const {
     handleSubmit,
