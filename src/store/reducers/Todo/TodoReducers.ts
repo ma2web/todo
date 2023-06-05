@@ -1,12 +1,5 @@
-import {
-  AddTodoAction,
-  AppState,
-  EditTodoStatusAction,
-  RemoveTodoAction,
-  Todo,
-} from '../../types/types';
-
-export type AppAction = AddTodoAction | RemoveTodoAction | EditTodoStatusAction;
+import { AppAction, AppState } from 'types/store';
+import { Todo } from 'types/todo';
 
 const addTodo = (
   state: AppState,
@@ -27,7 +20,7 @@ const addTodo = (
 };
 
 const removeTodo = (state: AppState, id: number): AppState => {
-  const newTodoList = state.todoList.filter((todo) => todo.id !== id);
+  const newTodoList = state.todoList.filter((todo: Todo) => todo.id !== id);
 
   return { ...state, todoList: newTodoList };
 };
@@ -39,8 +32,8 @@ const editTodoTag = (
   title: string,
   description: string
 ): AppState => {
-  const todo = state.todoList.find((todo) => todo.id === id);
-  const todoIndex = state.todoList.indexOf(todo as any);
+  const todo = state.todoList.find((todo: Todo) => todo.id === id);
+  const todoIndex = state.todoList.indexOf(todo as Todo);
   const newTodo = { title, description, status, id };
 
   const newTodoList = [
@@ -52,7 +45,7 @@ const editTodoTag = (
   return { ...state, todoList: newTodoList };
 };
 
-export const reducer = (state: AppState, action: AppAction): AppState => {
+export const todoReducers = (state: AppState, action: AppAction): AppState => {
   switch (action.type) {
     case 'ADD_TODO':
       return addTodo(state, action.title, action.description);

@@ -1,11 +1,11 @@
 import { AddOutlined } from '@mui/icons-material';
 import { TextField } from '@mui/material';
+import AppButton from 'components/AppButton/AppButton';
+import AppTypography from 'components/AppTypography/AppTypography';
 import { useContext } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import AppButton from '../../../components/AppButton/AppButton';
-import AppTypography from '../../../components/AppTypography/AppTypography';
-import { Store } from '../../../store/Store';
-import { addTodo } from '../../../store/actions';
+import { Store } from 'store/Store';
+import { addTodo } from 'store/actions/Todo';
 import { useStyles } from './AddNewTask.styles';
 
 type Props = {};

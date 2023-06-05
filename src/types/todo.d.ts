@@ -5,10 +5,6 @@ export interface Todo {
   status: string;
 }
 
-export interface AppState {
-  todoList: Todo[];
-}
-
 export interface AddTodoAction {
   type: 'ADD_TODO';
   title: string;

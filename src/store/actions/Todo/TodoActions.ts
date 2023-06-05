@@ -1,4 +1,4 @@
-import { AppAction } from '../reducers';
+import { AppAction } from 'types/store';
 
 export const addTodo = (
   title: string,

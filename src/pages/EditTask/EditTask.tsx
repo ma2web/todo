@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { DriveFileRenameOutline } from '@mui/icons-material';
 import { FormHelperText, MenuItem, Select, TextField } from '@mui/material';
+import MainLayout from 'Layout/MainLayout';
+import AppButton from 'components/AppButton/AppButton';
+import AppTypography from 'components/AppTypography/AppTypography';
 import { useContext } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
-import MainLayout from '../../Layout/MainLayout';
-import AppButton from '../../components/AppButton/AppButton';
-import AppTypography from '../../components/AppTypography/AppTypography';
-import { Store } from '../../store/Store';
-import { editTodo } from '../../store/actions';
-import { Todo } from '../../types/types';
+import { Store } from 'store/Store';
+import { editTodo } from 'store/actions/Todo';
+import { Todo } from 'types/todo';
 import { useStyles } from './EditTask.styles';
 
 type Props = {};
